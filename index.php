@@ -1,5 +1,6 @@
 <?php
     require_once 'function.php';
+    $db = getDBConnection();
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +20,8 @@
     <div class="container grid">
         <?php
         $cardSets = getAllCards($db);
-        displayAllCards($cardSets);
+        $cardSetsString = displayAllCards($cardSets);
+        echo $cardSetsString;
         ?>
     </div>
 </main>
