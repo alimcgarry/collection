@@ -37,7 +37,7 @@ function displayAllCards(array $cardSets): string
         $str .= "<div class='card__wrapper'>";
         $str .= "<div class='card'>";
         if ($cardSet['limited']) {
-            $str . "<div class='card__limited'>Limited Edition</div>";
+            $str .= "<div class='card__limited'>Limited Edition</div>";
         }
         $str .= "<div class='card__img' role='img' style='background-image:linear-gradient(0deg, rgba(254, 236, 233, 0.25), rgba(254, 236, 233, 0.25)),url({$cardSet['img']});'/></div>";
         $str .= "<div class='card__content'>";
