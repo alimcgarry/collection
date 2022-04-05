@@ -1,13 +1,17 @@
-const modalWindow = document.querySelector(".modal");
-const body = document.querySelector('body');
+const modalWindow = document.querySelector(".modal")
+
 const title = document.querySelector(".header__title")
 
 function toggleModal(e) {
-    e.stopPropagation()
-    modalWindow.classList.toggle("hidden");
+    if (modalWindow.classList.contains('hidden')) {
+        modalWindow.classList.remove("hidden")
+    } else {
+        if (!e.target.closest('.modal__content')) {
+            modalWindow.classList.toggle("hidden")
+        }
+    }
 }
 
-// modalWindow.addEventListener("click", toggleModal);
 title.addEventListener("click", toggleModal)
-body.addEventListener("click", toggleModal)
 
+modalWindow.addEventListener('click', toggleModal)

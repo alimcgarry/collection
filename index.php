@@ -27,13 +27,13 @@
     </div>
 </main>
 
-<div class="modal">
+<div class="modal hidden">
     <div class="modal__content">
         <div class="modal__header">
             <h2 class="modal__title">Add a Deck</h2>
             <p class="modal__subtitle">Use the form below to add another deck of cards to your collection</p>
         </div>
-        <form class="modal__form">
+        <form method="post" class="modal__form">
             <label>Name
             <input type="text"/>
             </label>
@@ -43,8 +43,8 @@
             <label>Brand
             <input type="text"/>
             </label>
-            <label>Limited Edition
-            <input type="radio"/>
+            <label class="checkbox">Limited Edition
+            <input type="checkbox"/>
             </label>
             <label>Price
             <input type="number"/>
