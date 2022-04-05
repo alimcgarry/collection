@@ -30,14 +30,16 @@ function getAllCards(PDO $db):array
  */
 function displayAllCards(array $cardSets): string
 {
+    if (empty($cardSets)) echo "You have no decks in your collection";
     $str = "";
     foreach ($cardSets as $cardSet) {
+        if (empty($cardSet)) return false;
         $str .= "<div class='card__wrapper'>";
         $str .= "<div class='card'>";
         if ($cardSet['limited']) {
             $str . "<div class='card__limited'>Limited Edition</div>";
         }
-        $str .= "<div class='card__img' style='background-image:linear-gradient(0deg, rgba(254, 236, 233, 0.25), rgba(254, 236, 233, 0.25)),url({$cardSet['img']});'/></div>";
+        $str .= "<div class='card__img' role='img' style='background-image:linear-gradient(0deg, rgba(254, 236, 233, 0.25), rgba(254, 236, 233, 0.25)),url({$cardSet['img']});'/></div>";
         $str .= "<div class='card__content'>";
         $str .= "<h2 class='card__title'>{$cardSet['name']}</h2>";
         $str .= "<p class='card__brand'>{$cardSet['brand']}</p>";
