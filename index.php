@@ -14,8 +14,9 @@
     <script async src="script.js"></script>
 </head>
 <body>
-<header>
+<header class="container">
     <h1 class="header__title">My Playing Cards</h1>
+    <button class="header__btn">Add Deck</button>
 </header>
 <main>
     <div class="container grid">
@@ -33,26 +34,25 @@
             <h2 class="modal__title">Add a Deck</h2>
             <p class="modal__subtitle">Use the form below to add another deck of cards to your collection</p>
         </div>
-        <form method="post" class="modal__form">
+        <form method="post" class="modal__form" action="edit.php">
             <label>Name
-            <input type="text"/>
+            <input name="name" type="text"/>
             </label>
             <label>Image Url
-            <input type="text"/>
+            <input name="img" type="text"/>
             </label>
             <label>Brand
-            <input type="text"/>
+            <input name="brand" type="text"/>
             </label>
             <label class="checkbox">Limited Edition
-            <input type="checkbox"/>
+            <input name="limited" type="checkbox"/>
             </label>
             <label>Price
-            <input type="number"/>
+            <input name="price" type="number"/>
             </label>
             <input type="submit">
         </form>
     </div>
 </div>
-
 </body>
 </html>

@@ -50,4 +50,5 @@ function displayAllCards(array $cardSets): string
     }
     return $str;
 }
+
 ?>

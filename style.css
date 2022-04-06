@@ -45,8 +45,21 @@ img {
 header {
     width: 100%;
     height: 12rem;
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__btn {
+    background: var(--primary);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1.2rem 2.4rem;
+    font-size: 1.8rem;
+    font-family: 'lora';
+    font-weight: 600;
+    color: var(--background-light);
+    cursor: pointer;
 }
 
 main {
@@ -80,6 +93,11 @@ main {
     height: 100%;
     overflow: hidden;
     display: grid;
+}
+
+header {
+    display: flex;
+
 }
 
 .card__wrapper:hover {

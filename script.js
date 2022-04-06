@@ -1,4 +1,5 @@
 const modalWindow = document.querySelector(".modal")
+const addDeckBtn = document.querySelector(".header__btn")
 
 const title = document.querySelector(".header__title")
 
@@ -13,5 +14,5 @@ function toggleModal(e) {
 }
 
 title.addEventListener("click", toggleModal)
-
+addDeckBtn.addEventListener("click", toggleModal)
 modalWindow.addEventListener('click', toggleModal)
