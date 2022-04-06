@@ -45,7 +45,7 @@
             <h1 class="modal__title">Add a Deck</h1>
             <p class="modal__subtitle">Use the form below to add another deck of cards to your collection</p>
         </div>
-        <form method="post" class="modal__form" action="edit.php">
+        <form method="post" class="modal__form" action="addToDatabase.php">
             <label>Name
             <input name="name" type="text"/>
             </label>

@@ -17,10 +17,17 @@ function getDBConnection():PDO
  */
 function getAllCards(PDO $db):array
 {
-    $query = $db->prepare("SELECT `name`, `brand`, `price`, `img`, `limited` FROM `playing_cards`;");
+    $query = $db->prepare("SELECT `id`, `name`, `brand`, `price`, `img`, `limited` FROM `playing_cards`;");
     $query->execute();
     $cardSets = $query->fetchAll();
     return $cardSets;
+}
+
+function getSpecificDeck($db, $id) {
+    $query = $db->prepare("SELECT `id`, `name`, `brand`, `price`, `img`, `limited` FROM `playing_cards` WHERE `id` = $id;");
+    $query->execute();
+    $deck = $query->fetch();
+    return $deck;
 }
 
 /**
@@ -44,6 +51,7 @@ function displayAllCards(array $cardSets): string
         $str .= "<h2 class='card__title'>{$cardSet['name']}</h2>";
         $str .= "<p class='card__brand'>{$cardSet['brand']}</p>";
         $str .= "<span class='card__price'>£{$cardSet['price']}</span>";
+        $str .= "<a href='editPage.php?id={$cardSet['id']}'>Edit</a>";
         $str .= "</div>";
         $str .= "</div>";
         $str .= "</div>";

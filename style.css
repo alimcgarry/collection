@@ -285,7 +285,91 @@ header {
     font-size: 1.6rem;
     font-weight: 600;
     color: var(--background-light);
+}
 
+.edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 240, 237, 0.4);
+    height: 100vh;
+}
+
+.edit__content {
+    background: var(--background-light);
+    display: flex;
+    flex-direction: column;
+    padding: 5.2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 8px 4px rgba(253, 224, 219, 0.5);
+
+}
+
+.edit__header {
+    text-align: center;
+}
+
+.edit__title {
+    font-size: 3.2rem;
+    margin-bottom: 0.8rem;
+}
+
+.edit__subtitle {
+    font-size: 1.6rem;
+    color: var(--secondary);
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 2.4rem;
+}
+
+.edit__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+    row-gap: 2rem;
+}
+
+.edit__form label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--primary);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.edit__form .checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.edit__form input[type=text],
+.edit__form input[type=number],
+.edit__form input[type=url] {
+    display: block;
+    width: 100%;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--primary);
+    background: none;
+}
+
+.edit__form input[type=checkbox] {
+    border: 1px solid var(--accent);
+}
+
+.edit__form input[type=submit] {
+    background: var(--accent);
+    border: none;
+    border-radius: 0.5rem;
+    align-self: end;
+    justify-self: end;
+    padding: 1.2rem 2.4rem;
+    font-family: 'Lato';
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #fff;
 }
 
 
