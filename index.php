@@ -39,7 +39,7 @@
             <input name="name" type="text"/>
             </label>
             <label>Image Url
-            <input name="img" type="text"/>
+            <input name="img" type="url"/>
             </label>
             <label>Brand
             <input name="brand" type="text"/>

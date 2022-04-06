@@ -224,7 +224,8 @@ header {
 }
 
 .modal__form input[type=text],
-.modal__form input[type=number] {
+.modal__form input[type=number],
+.modal__form input[type=url] {
     display: block;
     width: 100%;
     padding: 0.6rem;
