@@ -62,6 +62,43 @@ header {
     cursor: pointer;
 }
 
+.errors {
+    text-align: center;
+}
+
+.error__title {
+    margin-bottom: 1.2rem;
+}
+
+.errors__content {
+    background: #fff;
+    display: inline-block;
+    padding: 3.2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0px 4px 8px 4px rgba(253, 224, 219, 0.5);
+}
+
+.error__subtitle {
+    font-size: 1.6rem;
+    color: var(--secondary);
+    margin: 0 auto;
+    margin-bottom: 2rem;
+    max-width: 32rem;
+}
+
+.error__btn {
+    background: var(--accent);
+    border: none;
+    border-radius: 0.5rem;
+    align-self: end;
+    justify-self: end;
+    padding: 1.2rem 2.4rem;
+    font-family: 'Lato';
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--background-light);
+}
+
 main {
     margin: 7.2rem 0;
     width: 100%;

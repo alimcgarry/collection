@@ -18,6 +18,17 @@
     <h1 class="header__title">My Playing Cards</h1>
     <button class="header__btn">Add Deck</button>
 </header>
+<div class="errors container">
+        <?php
+        if (isset($_GET['error'])) {
+            echo "<div class='errors__content'>";
+            echo "<h1 class='error__title'>Oops...</h1>";
+            echo "<p class='error__subtitle'>There was a problem submitting your form, {$_GET['error']}</p>";
+            echo "<button class='error__btn'>Try Again</button>";
+            echo "</div>";
+        }
+        ?>
+</div>
 <main>
     <div class="container grid">
         <?php
@@ -31,7 +42,7 @@
 <div class="modal hidden">
     <div class="modal__content">
         <div class="modal__header">
-            <h2 class="modal__title">Add a Deck</h2>
+            <h1 class="modal__title">Add a Deck</h1>
             <p class="modal__subtitle">Use the form below to add another deck of cards to your collection</p>
         </div>
         <form method="post" class="modal__form" action="edit.php">

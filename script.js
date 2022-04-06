@@ -1,5 +1,6 @@
 const modalWindow = document.querySelector(".modal")
 const addDeckBtn = document.querySelector(".header__btn")
+const errorMessage = document.querySelector(".errors")
 
 const title = document.querySelector(".header__title")
 
@@ -13,6 +14,14 @@ function toggleModal(e) {
     }
 }
 
+function manageError() {
+    errorMessage.innerHTML = '';
+    toggleModal();
+}
+
 title.addEventListener("click", toggleModal)
 addDeckBtn.addEventListener("click", toggleModal)
 modalWindow.addEventListener('click', toggleModal)
+errorMessage.addEventListener('click', manageError)
+
+
