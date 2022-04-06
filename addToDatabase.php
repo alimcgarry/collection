@@ -1,4 +1,6 @@
 <?php
     require_once 'data.php';
-    addFormToDataBase();
+//    addFormToDataBase();
+    $validData = validateFormData();
+    addToDatabase($validData);
 ?>
