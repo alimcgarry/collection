@@ -45,12 +45,12 @@
 </main>
 
 <div class="modal hidden">
-    <div class="modal__content">
+    <div class="form__container">
         <div class="form__header">
-            <h1 class="modal__title">Add a Deck</h1>
-            <p class="modal__subtitle">Use the form below to add another deck of cards to your collection</p>
+            <h1 class="form__title">Add a Deck</h1>
+            <p class="form__subtitle">Use the form below to add another deck of cards to your collection</p>
         </div>
-        <form method="post" class="modal__form" action="addToDatabase.php">
+        <form method="post" class="form" action="addToDatabase.php">
             <input name="action" type="hidden" value="add">
             <label>Name
             <input name="name" type="text"/>

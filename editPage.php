@@ -17,12 +17,12 @@
 </head>
 <body>
 <div class="edit">
-    <div class="edit__content">
+    <div class="form__container">
         <div class="form__header">
-            <h1 class="edit__title">Edit Your Deck</h1>
-            <p class="edit__subtitle">Use the form below to edit the information about your deck</p>
+            <h1 class="form__title">Edit Your Deck</h1>
+            <p class="form__subtitle">Use the form below to edit the information about your deck</p>
         </div>
-        <form method="post" class="edit__form" action="editDatabase.php">
+        <form method="post" class="form" action="editDatabase.php">
             <input name="action" type="hidden" value="edit">
             <input name="id" type="hidden" value="<?=$id?>"/>
             <label>Name
