@@ -98,4 +98,12 @@ function editDatabase($validData)
     ]);
     header("Location: index.php");
 }
+
+function deleteDatabaseItem($id) {
+    $db = getDBConnection();
+    $query = $db->prepare("UPDATE `playing_cards` SET `deleted` = 1 WHERE `id` = :id;");
+    $query->bindParam(':id', $id);
+    $query->execute();
+    header("Location: index.php");
+}
 ?>
