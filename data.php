@@ -71,6 +71,11 @@ function validateFormData() {
     }
 }
 
+/**
+ * Takes validated form data and uses it to add a deck of cards to the database
+ * @param $validData
+ * @return void
+ */
 function addToDatabase($validData)
 {
     $db = getDBConnection();
@@ -84,6 +89,12 @@ function addToDatabase($validData)
     ]);
     header("Location: index.php");
 }
+
+/**
+ * Takes validated form data and uses it to edit data about deck of cards in the database
+ * @param $validData
+ * @return void
+ */
 function editDatabase($validData)
 {
     $db = getDBConnection();
@@ -99,6 +110,11 @@ function editDatabase($validData)
     header("Location: index.php");
 }
 
+/**
+ * Deletes a deck of cards from the database once a user has requested it
+ * @param $id
+ * @return void
+ */
 function deleteDatabaseItem($id) {
     $db = getDBConnection();
     $query = $db->prepare("UPDATE `playing_cards` SET `deleted` = 1 WHERE `id` = :id;");
