@@ -12,7 +12,7 @@
     <title>Playing Card Collection</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/9b98b550ee.js" crossorigin="anonymous"></script>
-    <script async src="script.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
 <header class="container">
