@@ -24,7 +24,11 @@
             echo "<div class='errors__content'>";
             echo "<h1 class='error__title'>Oops...</h1>";
             echo "<p class='error__subtitle'>There was a problem submitting your form, {$_GET['error']}</p>";
-            echo "<button class='error__btn'>Try Again</button>";
+            if ($_GET['action'] === 'edit') {
+                echo "<a class='link' href='editPage.php?id={$_GET['id']}'><button class='error__btn btn--edit'>Try Again</button></a>";
+            } elseif ($_GET['action'] === 'add') {
+                echo "<button class='error__btn btn--add'>Try Again</button>";
+            }
             echo "</div>";
         }
         ?>
@@ -46,6 +50,7 @@
             <p class="modal__subtitle">Use the form below to add another deck of cards to your collection</p>
         </div>
         <form method="post" class="modal__form" action="addToDatabase.php">
+            <input name="action" type="hidden" value="add">
             <label>Name
             <input name="name" type="text"/>
             </label>

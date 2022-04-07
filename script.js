@@ -1,8 +1,8 @@
 const modalWindow = document.querySelector(".modal")
 const addDeckBtn = document.querySelector(".header__btn")
 const errorMessage = document.querySelector(".errors")
+const addErrorBtn = document.querySelector(".btn--add")
 
-const title = document.querySelector(".header__title")
 
 function toggleModal(e) {
     if (modalWindow.classList.contains('hidden')) {
@@ -19,9 +19,11 @@ function manageError() {
     toggleModal();
 }
 
-title.addEventListener("click", toggleModal)
 addDeckBtn.addEventListener("click", toggleModal)
 modalWindow.addEventListener('click', toggleModal)
-errorMessage.addEventListener('click', manageError)
+addErrorBtn.addEventListener('click', function() {
+    manageError();
+    toggleModal();
+})
 
 

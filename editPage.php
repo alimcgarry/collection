@@ -23,6 +23,7 @@
             <p class="edit__subtitle">Use the form below to edit the information about your deck</p>
         </div>
         <form method="post" class="edit__form" action="editDatabase.php">
+            <input name="action" type="hidden" value="edit">
             <input name="id" type="hidden" value="<?=$id?>"/>
             <label>Name
             <input name="name" type="text" value="<?=$deck['name']?>"/>

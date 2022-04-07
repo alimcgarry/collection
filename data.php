@@ -21,17 +21,25 @@ function cleanUserInput(string $userInput): string {
 function validateFormData() {
     if(isset($_POST['name']) && isset($_POST['img']) && isset($_POST['brand']) && isset($_POST['price'])) {
 
+        $queryString = "&action={$_POST['action']}";
+
+        if ($_POST['action'] == 'edit') {
+            $queryString .= "&id={$_POST['id']}";
+        }
+
+
+
         if(isset($_POST['id'])) {
             $idInput = cleanUserInput($_POST['id']);
             if(!is_numeric($idInput)) {
-                header('Location: index.php?error=id must be a number!');
+                header('Location: index.php?error=id must be a number!?');
                 exit();
             }
         }
 
         $nameInput = cleanUserInput($_POST['name']);
         if (strlen($nameInput) == 0) {
-            header('Location: index.php?error=name cannot be empty!');
+            header("Location: index.php?error=name cannot be empty!$queryString");
             exit();
         }
 
