@@ -23,6 +23,23 @@ function getAllCards(PDO $db):array
     return $cardSets;
 }
 
+function getAllCardsPriceAscending(PDO $db): array
+{
+    $query = $db->prepare("SELECT `id`, `name`, `brand`, `price`, `img`, `limited`, `deleted` FROM `playing_cards`  WHERE `deleted` = 0 ORDER BY `price` ASC;");
+    $query->execute();
+    $cardSets = $query->fetchAll();
+    return $cardSets;
+}
+
+function getAllCardsPriceDescending(PDO $db): array
+{
+    $query = $db->prepare("SELECT `id`, `name`, `brand`, `price`, `img`, `limited`, `deleted` FROM `playing_cards`  WHERE `deleted` = 0 ORDER BY `price` DESC;");
+    $query->execute();
+    $cardSets = $query->fetchAll();
+    return $cardSets;
+}
+
+
 function getSpecificDeck($db, $id) {
     $query = $db->prepare("SELECT `id`, `name`, `brand`, `price`, `img`, `limited` FROM `playing_cards` WHERE `id` = $id;");
     $query->execute();
