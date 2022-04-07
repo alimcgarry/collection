@@ -46,7 +46,7 @@
 
 <div class="modal hidden">
     <div class="modal__content">
-        <div class="modal__header">
+        <div class="form__header">
             <h1 class="modal__title">Add a Deck</h1>
             <p class="modal__subtitle">Use the form below to add another deck of cards to your collection</p>
         </div>
