@@ -17,7 +17,7 @@ function getDBConnection():PDO
  */
 function getAllCards(PDO $db):array
 {
-    $query = $db->prepare("SELECT `id`, `name`, `brand`, `price`, `img`, `limited`, `deleted` FROM `playing_cards`;");
+    $query = $db->prepare("SELECT `id`, `name`, `brand`, `price`, `img`, `limited`, `deleted` FROM `playing_cards` WHERE `deleted` = 0;");
     $query->execute();
     $cardSets = $query->fetchAll();
     return $cardSets;
@@ -41,7 +41,6 @@ function displayAllCards(array $cardSets): string
     $str = "";
     foreach ($cardSets as $cardSet) {
         if (empty($cardSet)) return false;
-        if ($cardSet['deleted'] == 1) continue;
         $str .= "<div class='card__wrapper'>";
         $str .= "<div class='card'>";
         if ($cardSet['limited']) {
