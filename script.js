@@ -8,7 +8,7 @@ function toggleModal(e) {
     if (modalWindow.classList.contains('hidden')) {
         modalWindow.classList.remove("hidden");
     } else {
-        if (!e.target.closest('.modal__content')) {
+        if (!e.target.closest('.form__container')) {
             modalWindow.classList.toggle("hidden");
         }
     }
