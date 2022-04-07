@@ -11,7 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playing Card Collection</title>
     <link rel="stylesheet" href="style.css">
-    <script async src="script.js"></script>
+    <script src="https://kit.fontawesome.com/9b98b550ee.js" crossorigin="anonymous"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
 <header class="container">
@@ -24,7 +25,11 @@
             echo "<div class='errors__content'>";
             echo "<h1 class='error__title'>Oops...</h1>";
             echo "<p class='error__subtitle'>There was a problem submitting your form, {$_GET['error']}</p>";
-            echo "<button class='error__btn'>Try Again</button>";
+            if ($_GET['action'] === 'edit') {
+                echo "<a class='link' href='editPage.php?id={$_GET['id']}'><button class='error__btn btn--edit'>Try Again</button></a>";
+            } elseif ($_GET['action'] === 'add') {
+                echo "<button class='error__btn btn--add'>Try Again</button>";
+            }
             echo "</div>";
         }
         ?>
@@ -40,12 +45,13 @@
 </main>
 
 <div class="modal hidden">
-    <div class="modal__content">
-        <div class="modal__header">
-            <h1 class="modal__title">Add a Deck</h1>
-            <p class="modal__subtitle">Use the form below to add another deck of cards to your collection</p>
+    <div class="form__container">
+        <div class="form__header">
+            <h1 class="form__title">Add a Deck</h1>
+            <p class="form__subtitle">Use the form below to add another deck of cards to your collection</p>
         </div>
-        <form method="post" class="modal__form" action="edit.php">
+        <form method="post" class="form" action="addToDatabase.php">
+            <input name="action" type="hidden" value="add">
             <label>Name
             <input name="name" type="text"/>
             </label>

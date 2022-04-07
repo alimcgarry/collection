@@ -32,6 +32,10 @@ h2 {
     font-size: 2.4rem;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     font-family: 'lora';
     background-color: var(--background);
@@ -97,6 +101,7 @@ header {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--background-light);
+    cursor: pointer;
 }
 
 main {
@@ -193,6 +198,18 @@ header {
     font-size: 2rem;
     color: var(--accent);
     font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+.card__icons-container {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.card__icons-container .icon {
+    font-size: 2.2rem;
+    color: #8790B2;
 }
 
 .modal {
@@ -210,8 +227,7 @@ header {
     z-index: 9999;
 }
 
-.modal__content {
-    top: 0;
+.form__container {
     background: #fff;
     display: flex;
     flex-direction: column;
@@ -221,16 +237,16 @@ header {
 
 }
 
-.modal__header {
+.form__header {
     text-align: center;
 }
 
-.modal__title {
+.form__title {
     font-size: 3.2rem;
     margin-bottom: 0.8rem;
 }
 
-.modal__subtitle {
+.form__subtitle {
     font-size: 1.6rem;
     color: var(--secondary);
     width: 75%;
@@ -238,14 +254,15 @@ header {
     margin-bottom: 2.4rem;
 }
 
-.modal__form {
+.form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
     row-gap: 2rem;
 }
 
-.modal__form label {
+
+.form label {
     font-size: 1.6rem;
     font-weight: 600;
     color: var(--primary);
@@ -254,27 +271,27 @@ header {
     gap: 0.4rem;
 }
 
-.modal__form .checkbox {
+.form .checkbox {
     flex-direction: row;
     align-items: center;
     gap: 1.2rem;
 }
 
-.modal__form input[type=text],
-.modal__form input[type=number],
-.modal__form input[type=url] {
+.form input[type=text],
+.form input[type=number],
+.form input[type=url] {
     display: block;
     width: 100%;
-    padding: 0.6rem;
+    padding: 1rem;
     border-radius: 0.5rem;
     border: 1px solid var(--accent);
 }
 
-.modal__form input[type=checkbox] {
+.form input[type=checkbox] {
     border: 1px solid var(--accent);
 }
 
-.modal__form input[type=submit] {
+.form input[type=submit] {
     background: var(--accent);
     border: none;
     border-radius: 0.5rem;
@@ -285,9 +302,46 @@ header {
     font-size: 1.6rem;
     font-weight: 600;
     color: var(--background-light);
-
 }
 
+.edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 240, 237, 0.4);
+    height: 100vh;
+}
 
+@media (max-width: 74em) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
 
+@media (max-width: 48em) {
+    h1 {
+        font-size: 3.2rem;
+    }
 
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card__limited {
+        right: 50%;
+    }
+
+    .form__container {
+        max-width: 88%;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+    }
+
+    .form input[type=submit] {
+        justify-self: center;
+        width: 100%;
+        margin-top: 1.8rem;
+    }
+}
