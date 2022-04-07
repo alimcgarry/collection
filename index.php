@@ -34,10 +34,29 @@
         }
         ?>
 </div>
+
+<div class="container">
+    <form class='sort__form' method="get" action="sortBy.php">
+    <select name="sort" class="sort__select">
+        <option value="default">Default</option>
+        <option <?php if (isset($_GET['sort'])  && $_GET['sort'] == "high_to_low") echo "selected"?> value="high_to_low">Price, High to Low</option>
+        <option <?php if (isset($_GET['sort'])  && $_GET['sort'] == "low_to_high") echo "selected"?> value="low_to_high">Price, Low to High</option>
+    </select>
+        <input value="Sort By" type="submit">
+    </form>
+</div>
+
 <main>
     <div class="container grid">
         <?php
-        $cardSets = getAllCards($db);
+        if (isset($_GET['sort'])  && $_GET['sort'] == 'default') {
+            $cardSets = getAllCards($db);
+        } elseif(isset($_GET['sort'])  && $_GET['sort'] == 'low_to_high') {
+            $cardSets = getAllCardsPriceAscending($db);
+        } else {
+            $cardSets = getAllCardsPriceDescending($db);
+        }
+
         $cardSetsString = displayAllCards($cardSets);
         echo $cardSetsString;
         ?>
