@@ -52,8 +52,10 @@ function displayAllCards(array $cardSets): string
         $str .= "<h2 class='card__title'>{$cardSet['name']}</h2>";
         $str .= "<p class='card__brand'>{$cardSet['brand']}</p>";
         $str .= "<span class='card__price'>£{$cardSet['price']}</span>";
-        $str .= "<a href='editPage.php?id={$cardSet['id']}'>Edit</a>";
-        $str .= "<a href='deleteDatabaseItem.php?id={$cardSet['id']}'>Delete</a>";
+        $str .= "<div class='card__icons-container'>";
+        $str .= "<a href='editPage.php?id={$cardSet['id']}'><i class='icon fa-solid fa-gear'></i></a>";
+        $str .= "<a href='deleteDatabaseItem.php?id={$cardSet['id']}'><i class='icon fa-solid fa-trash-can'></i></a>";
+        $str .= "</div>";
         $str .= "</div>";
         $str .= "</div>";
         $str .= "</div>";

@@ -198,6 +198,18 @@ header {
     font-size: 2rem;
     color: var(--accent);
     font-weight: 700;
+    margin-bottom: 1.2rem;
+}
+
+.card__icons-container {
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+}
+
+.card__icons-container .icon {
+    font-size: 2.2rem;
+    color: #8790B2;
 }
 
 .modal {
