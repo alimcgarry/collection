@@ -1,6 +1,13 @@
 <?php
     require_once 'function.php';
     $db = getDBConnection();
+
+    if (isset($_GET['id'])) {
+        $id = $_GET['id'];
+    } else {
+        header("Location: index.php");
+    }
+    
     $id = $_GET['id'];
     $deck = getSpecificDeck($db, $id);
     $checked = $deck['limited'] ? "checked" : "";
