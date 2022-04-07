@@ -7,7 +7,7 @@
     } else {
         header("Location: index.php");
     }
-    
+
     $id = $_GET['id'];
     $deck = getSpecificDeck($db, $id);
     $checked = $deck['limited'] ? "checked" : "";
