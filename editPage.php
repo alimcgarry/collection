@@ -3,9 +3,7 @@
     $db = getDBConnection();
     $id = $_GET['id'];
     $deck = getSpecificDeck($db, $id);
-    var_dump($deck);
     $checked = $deck['limited'] ? "checked" : "";
-    echo $checked;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +23,7 @@
             <p class="edit__subtitle">Use the form below to edit the information about your deck</p>
         </div>
         <form method="post" class="edit__form" action="editDatabase.php">
+            <input name="id" type="hidden" value="<?=$id?>"/>
             <label>Name
             <input name="name" type="text" value="<?=$deck['name']?>"/>
             </label>

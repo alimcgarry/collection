@@ -20,6 +20,15 @@ function cleanUserInput(string $userInput): string {
  */
 function validateFormData() {
     if(isset($_POST['name']) && isset($_POST['img']) && isset($_POST['brand']) && isset($_POST['price'])) {
+
+        if(isset($_POST['id'])) {
+            $idInput = cleanUserInput($_POST['id']);
+            if(!is_numeric($idInput)) {
+                header('Location: index.php?error=id must be a number!');
+                exit();
+            }
+        }
+
         $nameInput = cleanUserInput($_POST['name']);
         if (strlen($nameInput) == 0) {
             header('Location: index.php?error=name cannot be empty!');
@@ -46,6 +55,10 @@ function validateFormData() {
             'limited' => $limitedInput,
             'price' => $priceInput
         ];
+
+        if (isset($idInput)) {
+            $validData['id'] = $idInput;
+        }
         return $validData;
     }
 }
@@ -63,12 +76,18 @@ function addToDatabase($validData)
     ]);
     header("Location: index.php");
 }
-
 function editDatabase($validData)
 {
-    
-}
+    $db = getDBConnection();
+    $query = $db->prepare("UPDATE `playing_cards` SET `name` = :name, `brand` = :brand, `price` = :price, `img` = :img, `limited` = :limited WHERE `id` = :id;");
+    $query->execute([
+        ':id' => $validData['id'],
+        ':name' => $validData['name'],
+        ':img' => $validData['img'],
+        ':brand' => $validData['brand'],
+        ':limited' => $validData['limited'],
+        ':price' => $validData['price'],
+    ]);
+    header("Location: index.php");
 }
 ?>
-
-
